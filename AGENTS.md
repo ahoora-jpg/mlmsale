@@ -1,0 +1,1 @@
+Apply SEARCH-GROWTH.md. Audit before changes; preserve healthy URLs/design and document evidence and limitations. Never commit secrets, private accounts, or local runtime state. Build and run integration tests before publishing backend changes.

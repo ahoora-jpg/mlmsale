@@ -1,0 +1,9 @@
+node_modules/
+.wrangler/
+dist/
+.dev.vars*
+.env*
+*.secret.json
+*.local.json
+*.log
+dist-preview/
