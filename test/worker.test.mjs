@@ -53,6 +53,7 @@ test('registration, duplicate rejection and booth ownership',async()=>{
   assert.equal((await request('/api/register','POST',form)).status,409);
   assert.equal((await request('/api/booth','PUT',{id:owner.id,name:'تغییر غیرمجاز',offers:{}},registeredCookie)).status,403);
   assert.equal((await request('/api/booth','PUT',{id:registeredId,name:form.name,whatsapp:'test_handle',description:'توضیح آزمون',offers:{89:{price:100000,discount:15}}},registeredCookie)).status,200);
+  const catalog=await(await request('/products.json')).json(),lia=catalog.find(p=>p.company==='lia');assert.ok(lia);assert.equal((await request('/api/booth','PUT',{id:registeredId,name:form.name,offers:{89:{price:100000,discount:15},[lia.id]:{price:200000,discount:10}}},registeredCookie)).status,200);
   assert.equal((await request('/api/booth','PUT',{id:registeredId,name:form.name,offers:{9999:{price:100,discount:0}}},registeredCookie)).status,400);
   assert.equal((await request('/api/booth','PUT',{id:registeredId,name:form.name,offers:{89:{price:100000,discount:110}}},registeredCookie)).status,400);
   const badOrigin=await mf.dispatchFetch(origin+'/api/register',{method:'POST',headers:{Origin:'https://other.test','Content-Type':'application/json'},body:JSON.stringify(form)});assert.equal(badOrigin.status,403);

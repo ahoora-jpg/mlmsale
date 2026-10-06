@@ -19,7 +19,8 @@
     "color": "#713D99",
     "soft": "#F6F0FA",
     "description": "کاتالوگ محصولات پنبه‌ریز و برندهای آن، از جمله لدورا.",
-    "catalogStatus": "pending"
+    "catalogStatus": "partial",
+    "catalogNote": "این مجموعه از منابع فروشندگان عمومی گردآوری شده و هنوز با کاتالوگ رسمی شرکت تطبیق کامل داده نشده است."
   },
   {
     "id": "newsha",
@@ -36,22 +37,23 @@
     "id": "lia",
     "name": "لیاتیم",
     "short": "LIA Team",
-    "source": "https://liateam.com/",
-    "logo": null,
-    "color": "#225968",
-    "soft": "#EFF7F9",
+    "source": "https://liateam.ir/",
+    "logo": "/assets/companies/lia.svg",
+    "color": "#231F20",
+    "soft": "#F6F6F7",
     "description": "محصولات مراقبت پوست و مو و آرایشی شبکه لیاتیم.",
-    "catalogStatus": "pending"
+    "catalogStatus": "available"
   },
   {
     "id": "biz",
     "name": "بازاریابان ایرانیان زمین",
     "short": "بیز / BIZ",
     "source": "https://bizmlm.ir/",
-    "logo": null,
-    "color": "#353A72",
-    "soft": "#F1F2FA",
+    "logo": "/assets/companies/biz.jpg",
+    "color": "#765394",
+    "soft": "#F5F1F8",
     "description": "محصولات شرکت بیز و برندهای عرضه‌شده در این شبکه.",
-    "catalogStatus": "pending"
+    "catalogStatus": "partial",
+    "catalogNote": "این مجموعه از منابع فروشندگان عمومی گردآوری شده و هنوز با کاتالوگ رسمی شرکت تطبیق کامل داده نشده است."
   }
 ]
