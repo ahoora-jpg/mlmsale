@@ -150,7 +150,11 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
     let response;
-    if (url.pathname === '/products.json' && ['GET','HEAD'].includes(request.method)) response = json(products);
+    if (url.pathname === '/products.json' && ['GET','HEAD'].includes(request.method)) response = json(products.map(({id,company,category,name,image,price,url,seo})=>({id,company,category,name,image,price,url,seo})));
+    else if (/^\/api\/product\/\d+$/.test(url.pathname) && ['GET','HEAD'].includes(request.method)) {
+      const product=products.find(p=>p.id===Number(url.pathname.split('/').pop()));
+      response=product?json(product):json({error:'محصول پیدا نشد.'},404);
+    }
     else if (url.pathname.startsWith('/api/') || !/\.[^/]+$/.test(url.pathname) || ['/robots.txt','/sitemap.xml'].includes(url.pathname)) response = await env.MARKET.get(env.MARKET.idFromName('catalog-v1')).fetch(request);
     else response = await env.ASSETS.fetch(request);
     const headers = new Headers(response.headers);
