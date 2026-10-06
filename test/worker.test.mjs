@@ -26,10 +26,12 @@ after(async()=>{if(mf)await mf.dispose();if(dir)await rm(dir,{recursive:true,for
 
 test('catalog SSR, canonical domain, robots and real 404s',async()=>{
   const products=await(await request('/products.json')).json(),titles=new Set();
-  assert.equal(products.length,16);
+  assert.ok(products.length>=16);assert.equal(products.filter(p=>p.company==='arya').length,16);
   for(const p of products){const r=await request(p.url);assert.equal(r.status,200);const h=await r.text();assert.ok(h.includes('application/ld+json'));assert.ok(h.includes('index,follow'));assert.ok(h.includes(origin+p.url));titles.add(h.match(/<title>(.*?)<\/title>/)[1]);}
-  assert.equal(titles.size,16);
-  assert.equal((await request('/not-a-page')).status,404);
+  assert.equal(titles.size,products.length);
+  const home=await(await request('/')).text();assert.ok(home.includes('MLM Sale'));assert.ok(!home.includes('بازار محصولات آریا'));
+  for(const id of ['arya','newsha','pmlm','lia','biz']){const r=await request('/companies/'+id);assert.equal(r.status,200);const html=await r.text();assert.ok(html.includes('data-company="'+id+'"'));assert.ok(!html.includes('تومان'));if(id!=='arya')assert.ok(!html.includes('/products/arya-'));}
+  assert.equal((await request('/companies/unknown')).status,404);assert.equal((await request('/not-a-page')).status,404);
   assert.equal((await request('/missing.png')).status,404);
   assert.equal((await request('/.owner-account.secret.json')).status,404);
   assert.equal((await request('/assets/font-400.woff2')).status,200);

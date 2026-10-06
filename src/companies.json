@@ -1,0 +1,57 @@
+[
+  {
+    "id": "arya",
+    "name": "آریا پژوهش یکتا",
+    "short": "آریا",
+    "source": "https://aryamlm.ir/",
+    "logo": "/assets/logo.jpeg",
+    "color": "#17613D",
+    "soft": "#EEF7F0",
+    "description": "محصولات مراقبت پوست و مو آریا؛ توضیحات، ترکیبات و روش مصرف.",
+    "catalogStatus": "available"
+  },
+  {
+    "id": "pmlm",
+    "name": "مروارید پنبه‌ریز",
+    "short": "پنبه‌ریز / PMLM",
+    "source": "https://pmlm.ir/",
+    "logo": null,
+    "color": "#713D99",
+    "soft": "#F6F0FA",
+    "description": "کاتالوگ محصولات پنبه‌ریز و برندهای آن، از جمله لدورا.",
+    "catalogStatus": "pending"
+  },
+  {
+    "id": "newsha",
+    "name": "پارس نیوشانیک",
+    "short": "نیوشانیک",
+    "source": "https://newshanik.ir/",
+    "logo": "/assets/companies/newsha.png",
+    "color": "#B72835",
+    "soft": "#FFF3F3",
+    "description": "چای، دمنوش و نوشیدنی‌های نیوشا؛ معرفی محصول و ترکیبات.",
+    "catalogStatus": "available"
+  },
+  {
+    "id": "lia",
+    "name": "لیاتیم",
+    "short": "LIA Team",
+    "source": "https://liateam.com/",
+    "logo": null,
+    "color": "#225968",
+    "soft": "#EFF7F9",
+    "description": "محصولات مراقبت پوست و مو و آرایشی شبکه لیاتیم.",
+    "catalogStatus": "pending"
+  },
+  {
+    "id": "biz",
+    "name": "بازاریابان ایرانیان زمین",
+    "short": "بیز / BIZ",
+    "source": "https://bizmlm.ir/",
+    "logo": null,
+    "color": "#353A72",
+    "soft": "#F1F2FA",
+    "description": "محصولات شرکت بیز و برندهای عرضه‌شده در این شبکه.",
+    "catalogStatus": "pending"
+  }
+]

@@ -21,3 +21,25 @@ header{box-shadow:0 4px 24px #35232D08}
 .save-message,#profile-message{color:#942D4B}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #A83F63;outline-offset:3px}
 @media(max-width:760px){.card{padding:10px 8px 18px;border-radius:16px}}
+
+/* Each company keeps a separate visual scope; marketplace pages remain neutral. */
+.market-logo{display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:#A83F63;color:#fff;font:700 26px Arial}
+.company-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:36px 0}
+.company-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:32px 24px;background:var(--company-soft);border:1px solid var(--company-color);border-radius:24px;color:#35232D;transition:transform .2s}
+.company-card:hover{transform:translateY(-4px)}
+.company-card img{width:100px;height:100px;object-fit:contain;border-radius:18px;background:#fff;padding:8px}
+.company-wordmark{display:grid;place-items:center;min-height:100px;font-size:26px;font-weight:700;color:var(--company-color)}
+.company-card h2{font-size:20px;margin:20px 0 8px}.company-card p{font-size:14px;color:#55434D;flex:1}
+.company-enter{display:block;padding:8px 20px;border-radius:24px;background:var(--company-color);color:white;margin-top:16px}
+.company-banner{display:flex;align-items:center;gap:24px;margin:25px 0 35px;padding:28px;background:var(--company-soft);border-radius:20px;border-inline-start:5px solid var(--company-color)}
+.company-banner img{object-fit:contain;background:white;border-radius:18px;padding:8px}
+.usage-guide{display:block;width:auto;max-width:100%;max-height:440px;object-fit:contain;margin:20px auto}
+body[data-company]{background:var(--company-soft);color:#24352D}
+body[data-company] .primary,body[data-company] .contact-button,body[data-company] .active{background:var(--company-color);border-color:var(--company-color);color:#fff}
+body[data-company] .eyebrow,body[data-company] .product-copy details[open] summary{color:var(--company-color)}
+body[data-company] .booth-banner,body[data-company] .booth-teaser,body[data-company] footer{background:var(--company-soft)}
+body[data-company] .card,body[data-company] .panel,body[data-company] .empty{border-color:color-mix(in srgb,var(--company-color) 22%,white)}
+body[data-company] button:focus-visible,body[data-company] a:focus-visible{outline-color:var(--company-color)}
+@media(max-width:900px){.company-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.company-grid{grid-template-columns:1fr;gap:16px}.company-card{padding:24px 18px}.company-banner{flex-direction:column;align-items:start;padding:22px}.company-banner h1{font-size:22px}}
+@media(prefers-reduced-motion:reduce){.company-card{transition:none}.company-card:hover{transform:none}}
